@@ -22,4 +22,13 @@ print(y_test)
 print(y_train)
 
 
+#Feature Scaling
+from sklearn.preprocessing import StandardScaler
+s=StandardScaler()
+X_test=s.fit_transform(x_test)
+X_train=s.fit_transform(x_train)
+print(X_train)
+print(X_test)
+
+
 
