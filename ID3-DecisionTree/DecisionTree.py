@@ -47,4 +47,11 @@ print("Accuracy:", accuracy)
 
 
 
+# Tree plot
+from sklearn import tree
+plt.figure(figsize=(12,8))
+tree.plot_tree(treemodel,filled=True ,feature_names=["Age","Salary"])
+plt.show("DecitionTree")
+plt.show()
+
   
