@@ -15,7 +15,6 @@ y=dataset.iloc[:,-1].values
 
 from sklearn.model_selection import train_test_split
 x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.25,random_state=0)
- 
 print(x_train)
 print(x_test)
 print(y_test)
@@ -29,6 +28,12 @@ X_test=s.fit_transform(x_test)
 X_train=s.fit_transform(x_train)
 print(X_train)
 print(X_test)
+
+
+#TraningModel/prepurning
+from sklearn.tree import DecisionTreeClassifier
+treemodel=DecisionTreeClassifier(criterion='entropy',random_state=0)
+treemodel.fit(x_train,y_train)
 
 
 
