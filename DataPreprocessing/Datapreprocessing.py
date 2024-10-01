@@ -22,3 +22,18 @@ impute=SimpleImputer(missing_values=np.nan , strategy="mean")
 impute.fit(x[:,1:3])
 (x[:,1:3]) = impute.transform((x[:,1:3]))
 print(x)
+
+
+#Encode categorical Data ,Independent Data
+from sklearn.compose import ColumnTransformer
+from  sklearn.preprocessing import OneHotEncoder
+ct =ColumnTransformer(transformers=[('encoder',OneHotEncoder(),[0])],remainder='passthrough')
+X=np.array(ct.fit_transform(x))
+print(X)
+
+#Encoding dependent Variable 
+from sklearn.preprocessing import LabelEncoder
+l=LabelEncoder()
+Y=l.fit_transform(y)
+print(Y) 
+ 
