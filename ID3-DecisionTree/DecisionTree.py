@@ -32,8 +32,19 @@ print(X_test)
 
 #TraningModel/prepurning
 from sklearn.tree import DecisionTreeClassifier
-treemodel=DecisionTreeClassifier(criterion='entropy',random_state=0)
-treemodel.fit(x_train,y_train)
+treemodel=DecisionTreeClassifier(criterion='entropy',random_state=0,max_depth=3)
+treemodel.fit(X_train,y_train)
+
+#predicting result /accuracy score
+
+from sklearn.metrics import confusion_matrix, accuracy_score
+print(treemodel.predict(s.transform([[30,87000]])))
+y_pred=treemodel.predict(X_test)
+cm = confusion_matrix(y_test, y_pred)
+accuracy = accuracy_score(y_test, y_pred)
+print("Accuracy:", accuracy)
 
 
 
+
+  
